@@ -1,100 +1,64 @@
-# Keyboard GPT
+# KeyBoard GPT_cn
+一个LSPosed 模块，可以让你在键盘中集成生成式 AI，如 ChatGPT。适用于所有应用
 
-An **LSPosed Module** that lets you integrate Generative AI like ChatGPT in keyboard. **Works in All Apps**
+演示视频
+演示视频：自定义提示
+演示视频：网页搜索
 
-<details>
-  <summary>Demo Video</summary>
+测试过的键盘
+Gboard
 
-https://github.com/user-attachments/assets/d00d362d-078f-4d8f-8b17-1544fb62cb37
+Swiftkey
 
-</details>
+Fleksy
 
-<details>
-  <summary>Demo Video: Custom Prompts</summary>
+三星键盘
 
+功能
+实时 AI 响应（支持普通和自定义提示）
 
-https://github.com/user-attachments/assets/6143837f-9896-4f60-b97a-730fd2aa0fde
+网页搜索
 
+安装指南
+Root 用户
+从 releases 下载并安装模块 apk
 
-</details>
+在 LSPosed 中启用模块并选择你喜欢的键盘
 
+在设置中强制关闭键盘，或者如果你不知道怎么做，重启手机
 
-<details>
-  <summary>Demo Video: Web Search</summary>
+非 Root 用户
+从 releases 下载并安装模块 apk
 
+在 LSPatch 管理器中修补你喜欢的键盘 apk 并按照说明进行操作
 
+使用指南
+在键盘中打开任何可编辑文本（如翻译、搜索 gif 等），然后在按下回车前输入你喜欢的指令
 
-https://github.com/user-attachments/assets/0ee8e75c-753a-448a-bd8a-a0afe2e0ca12
+？？ 配置你的 API 提供商（api 密钥、语言模型等）
 
+？ 你的提示 提交一个普通提示
 
+！！ 配置自定义 AI 提示
 
-</details>
+！{p} 你的提示 提交一个自定义提示，其中 {p} 是你选择的前缀
 
-<p align="center">
-  <img src="demo/icon_border.png" alt="Icon" style="border: 10px solid black;"/>
-</p>
+！s 任何内容 进行网页搜索
 
-## Tested Keyboards
+参见上面的“演示视频”
 
-- [Gboard](https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin)
+小贴士：Google 提供免费的 Gemini API。在 google aistudio 获取密钥
 
-- [Swiftkey](https://play.google.com/store/apps/details?id=com.touchtype.swiftkey)
+支持的生成式 AI API
+ChatGPT
 
-- [Fleksy](https://play.google.com/store/apps/details?id=com.syntellia.fleksy.keyboard)
+Gemini
 
-- [Samsung Keyboard](https://galaxystore.samsung.com/prepost/000005967885?appId=com.samsung.android.honeyboard)
+Groq
 
-## Features
+欢迎更多建议！
 
-- Realtime AI response (supports normal and custom prompts)
+链接
+XDA 论坛链接
 
-- Web Search
-
-## Install Guide
-
-#### Root
-
-1. Install module apk from [releases](https://github.com/Mino260806/KeyboardGPT/releases/)
-
-2. Enable module in LSPosed and select your favorite keyboard
-
-3. Force close the keyboard from settings, or if you don't know how, restart you phone
-
-#### No Root
-
-1. Install module apk from [releases](https://github.com/Mino260806/KeyboardGPT/releases/)
-
-2. Patch your favorite keyboard apk in LSPatch Manager and follow the instructions
-
-## Usage Guide
-
-Open any editable text (like translate, search gif, etc) in your keyboard, and type your preferred instruction before pressing Enter
-
-- `??` to configure your API provider (api key, language model...)
-
-- `? your prompt` to submit a normal prompt
-
-- `!!` to configure custom AI prompts
-
-- `!{p} your prompt` to submit a custom prompt where `{p}` is the prefix you chose
-
-- `!s anything` to do a web search
-
-See "Demo Video" above
-
-**<u>Bonus Tip</u>**: Google offers Gemini API for free. Grab a key in [google aistudio](https://aistudio.google.com/app/apikey)
-
-## Supported Generative AI APIs
-
-- ChatGPT
-
-- Gemini
-
-- Groq
-
-More suggestions are welcome !
-
-## Links
-[XDA Link](https://xdaforums.com/t/mod-xposed-integrate-generative-ai-like-chatgpt-in-keyboard.4683421/)
-
-[Telegram Discussion](https://t.me/keyboard_gpt)
+Telegram 讨论
