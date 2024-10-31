@@ -42,29 +42,13 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Download Build Artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: app
-        path: app/build/outputs/apk/release
-
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v4.2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.event.inputs.tag }}-new
-        release_name: Release ${{ github.event.inputs.tag }}-new
-        draft: false
-        prerelease: false
-
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v4.2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: app/build/outputs/apk/release/app-release-unsigned.apk
-        asset_name: KeyBroad_cn_unsigned-${{ github.event.inputs.tag }}.apk
-        asset_content_type: application/zip
+      - name: rename
+          mv app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/KeyBroad-cn_unsigned-${{ github.event.inputs.tag }}.apk
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.event.inputs.tag }}
+          files: | 
+            app/build/outputs/apk/release/KeyBroad-cn_unsigned-${{ github.event.inputs.tag }}.apk
+         #  box/clash/ruleset
+          generate_release_notes: true
