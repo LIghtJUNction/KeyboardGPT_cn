@@ -46,7 +46,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: app
-        path: app/build/outputs/apk/release/app-release-unsigned.apk
+        path: app/build/outputs/apk/release
 
     - name: Create Release
       id: create_release
@@ -66,5 +66,5 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: app/build/outputs/apk/release/app-release-unsigned.apk
-        asset_name: KeyBroad_cn-unsigned-${{ github.event.inputs.tag }}.apk
+        asset_name: KeyBroad_cn_unsigned-${{ github.event.inputs.tag }}.apk
         asset_content_type: application/zip
