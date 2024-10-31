@@ -43,6 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: rename
+        run: |
           mv app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/KeyBroad-cn_unsigned-${{ github.event.inputs.tag }}.apk
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
