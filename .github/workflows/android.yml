@@ -38,18 +38,14 @@ jobs:
         overwrite: false
         include-hidden-files: false
 
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: rename
-        run: |
-          mv app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/KeyBroad-cn_unsigned-${{ github.event.inputs.tag }}.apk
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: ${{ github.event.inputs.tag }}
-          files: | 
-            app/build/outputs/apk/release/KeyBroad-cn_unsigned-${{ github.event.inputs.tag }}.apk
-         #  box/clash/ruleset
+    - name: rename
+      run: |
+        mv app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/KeyBroad-cn_unsigned-${{ github.event.inputs.tag }}.apk
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.event.inputs.tag }}
+        files: | 
+          app/build/outputs/apk/release/KeyBroad-cn_unsigned-${{ github.event.inputs.tag }}.apk
+
           generate_release_notes: true
